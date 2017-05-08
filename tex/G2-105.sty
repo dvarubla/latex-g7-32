@@ -62,7 +62,7 @@
   \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
   \let\@mkboth\markboth
   \def\chaptermark##1{%
-    \markright {\MakeUppercase{%
+    \markright {\LSpaceUppercase{%
       \ifnum \c@secnumdepth >\m@ne
           \@chapapp\ \thechapter. \ %
       \fi
@@ -290,6 +290,12 @@
   \if@usepscyr
     \RequirePackage[math]{pscyr}
   \fi
+  % Разрядка текста
+  \RequirePackage{letterspace}
+  \def\DefaultLSpace{90}
+  \newcommand{\Letterspace}[2][\DefaultLSpace]{%
+       \textls[#1]{#2}%
+  }
 \else
   % breaks
 %   \RequirePackage{unicode-math}
@@ -346,8 +352,17 @@
 	\def\postsubsection{\@aftersepkern}
 	\def\postsubsubsection{\@aftersepkern}
   }
+  % Разрядка текста
+  \def\DefaultLSpace{9}
+  \newcommand{\Letterspace}[2][\DefaultLSpace]{%
+       {\addfontfeatures{LetterSpace=#1}#2}%
+  }
 \fi
 \RequirePackage{flafter}
+
+% Разрядка текста -- общие команды
+\newcommand\LSpaceUppercase[1]{\Letterspace{\MakeUppercase{#1}}}
+\newcommand\SetDefaultLSpace[1]{\def\DefaultLSpace{#1}}
 
 % 4.2.7 Перечисления
 

@@ -26,7 +26,7 @@
 % Заголовки структурных элементов следует располагать в середине
 % строки без точки в конце и печатать прописными буквами, не
 % подчёркивая.
-\renewcommand\Gost@StructChapterStyle{\centering\MakeUppercase}
+\renewcommand\Gost@StructChapterStyle{\centering\LSpaceUppercase}
 
 % Get rid of the large font in chapter titles
 % (not sure whether this is regulated)
@@ -147,7 +147,7 @@
 %fix for first time compilation
 \newcommand\Nir@Title[1]{#1}
 \newcommand*\Nir[1]{\Nir@Title{#1}}  %Название НИР, не совместимо с \NirTitle  
-\newcommand\Nir@TitleAndSubject{\MakeUppercase{\Nir@Title}}
+\newcommand\Nir@TitleAndSubject{\LSpaceUppercase{\Nir@Title}}
 
 \newenvironment*{titlepage}{
  \thispagestyle{empty}
@@ -175,7 +175,7 @@
   }
   \hfill
   \parbox[t]{.49\linewidth}{
-    {\centering\MakeUppercase{\confirmname}
+    {\centering\LSpaceUppercase{\confirmname}
 
     }
     \vspace{5mm}
@@ -191,8 +191,8 @@
   
   \vfill
 
-  \MakeUppercase{\Nir@AnnOtchet \otchetname}\\
-  \MakeUppercase{\otchetcomplement}
+  \LSpaceUppercase{\Nir@AnnOtchet \otchetname}\\
+  \LSpaceUppercase{\otchetcomplement}
 
   \vspace{8mm}
   \Nir@TitleAndSubject
@@ -229,14 +229,14 @@
 % "по теме:"
 \newcommand\NirSubjectModifier{%
   по~теме:\\
-  \MakeUppercase%
+  \LSpaceUppercase%
 }
 %
 % A switch for the variant of the modifier as
 % in example 3 in ГОСТ 7.32-2001 ред. 2009 года.pdf:
 % (empty)
 \newcommand*\NirBareSubject[1]{%
-  \renewcommand\NirSubjectModifier{\MakeUppercase}%
+  \renewcommand\NirSubjectModifier{\LSpaceUppercase}%
 }
 
 % вид отчёта:
@@ -295,19 +295,19 @@
   \renewcommand*\mfirstucMakeUppercase{\MakeLowercase}%
   % switched the case-switching command for a while
   \makefirstuc{#1}%
-  \renewcommand*\mfirstucMakeUppercase{\MakeUppercase}%
+  \renewcommand*\mfirstucMakeUppercase{\LSpaceUppercase}%
 }
 \newcommand*\xmakefirstlc[1]{%
   \renewcommand*\mfirstucMakeUppercase{\MakeLowercase}%
   % switched the case-switching command for a while
   \xmakefirstuc{#1}%
-  \renewcommand*\mfirstucMakeUppercase{\MakeUppercase}%
+  \renewcommand*\mfirstucMakeUppercase{\LSpaceUppercase}%
 }
 \newcommand*\emakefirstlc[1]{%
   \renewcommand*\mfirstucMakeUppercase{\MakeLowercase}%
   % switched the case-switching command for a while
   \emakefirstuc{#1}%
-  \renewcommand*\mfirstucMakeUppercase{\MakeUppercase}%
+  \renewcommand*\mfirstucMakeUppercase{\LSpaceUppercase}%
 }
 
 \newcommand*\NirStage[3]{%
